@@ -1,3 +1,4 @@
+platform :ios, '9.0'
 use_frameworks!
 
 target 'SimpleSwitch_Example' do
@@ -6,6 +7,6 @@ target 'SimpleSwitch_Example' do
   target 'SimpleSwitch_Tests' do
     inherit! :search_paths
 
-    pod 'FBSnapshotTestCase'
+    pod 'FBSnapshotTestCase', git: 'https://github.com/facebook/ios-snapshot-test-case.git'
   end
 end

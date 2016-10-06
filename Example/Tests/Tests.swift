@@ -1,8 +1,10 @@
 import UIKit
 import XCTest
-import SimpleSwitch
+import FBSnapshotTestCase
+@testable import SimpleSwitch
 
-class Tests: XCTestCase {
+
+class Tests: FBSnapshotTestCase {
     
     override func setUp() {
         super.setUp()
@@ -14,16 +16,20 @@ class Tests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testOn() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        let simpleSwitch = SimpleSwitch(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+        
+        XCTAssertTrue(simpleSwitch.isOn)
+        FBSnapshotVerifyView(simpleSwitch)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+    func testOff() {
+        // This is an example of a functional test case.
+        let simpleSwitch = SimpleSwitch(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+        simpleSwitch.isOn = false
+        
+        XCTAssertFalse(simpleSwitch.isOn)
+        FBSnapshotVerifyView(simpleSwitch)
     }
-    
 }

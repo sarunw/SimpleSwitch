@@ -1,25 +1,50 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SimpleSwitch_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyK-bx-SRz" customClass="SimpleSwitch" customModule="SimpleSwitch">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="AZ1-xP-WfG"/>
+                                    <constraint firstAttribute="width" constant="86" id="FXn-XU-q6H"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RpX-gG-65k" customClass="SimpleSwitch" customModule="SimpleSwitch"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNb-qY-NKT" customClass="SimpleSwitch" customModule="SimpleSwitch">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="Op9-5k-qgH"/>
+                                    <constraint firstAttribute="height" constant="85" id="hWS-Pc-T0k"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tyK-bx-SRz" firstAttribute="top" secondItem="RpX-gG-65k" secondAttribute="bottom" constant="53.5" id="5lE-o8-hdR"/>
+                            <constraint firstItem="RpX-gG-65k" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="EJw-lx-vVX"/>
+                            <constraint firstItem="tyK-bx-SRz" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="bQp-x8-fPM"/>
+                            <constraint firstItem="dNb-qY-NKT" firstAttribute="top" secondItem="tyK-bx-SRz" secondAttribute="bottom" constant="42.5" id="hEy-1n-7iy"/>
+                            <constraint firstItem="tyK-bx-SRz" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="ncK-YQ-3GB"/>
+                            <constraint firstItem="dNb-qY-NKT" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="x07-60-9ER"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
     </scenes>
 </document>
