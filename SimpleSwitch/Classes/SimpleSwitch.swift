@@ -197,7 +197,6 @@ open class SimpleSwitch: UIControl {
         
         let dx = pos.x - prevPos.x
         
-        print("dx \(dx)")
         if abs(dx) > bounds.size.width / 2 {
             alreadyToggle = true
             if dx > 0 {
@@ -222,7 +221,6 @@ open class SimpleSwitch: UIControl {
     }
     
     func onShrink(sender: AnyObject) {
-        print("shrink")
         shrinkSwitchThumb()
     }
     
