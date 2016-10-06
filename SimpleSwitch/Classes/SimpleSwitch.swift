@@ -44,15 +44,33 @@ open class SimpleSwitch: UIControl {
     }
     
     /// Insets between thumb and outline
-    @IBInspectable open var minimumThumbSpacing: CGFloat? {
+    @IBInspectable open var minimumThumbSpacing: CGFloat = 0 {
         didSet {
-            let minimumThumbSpacing = self.minimumThumbSpacing ?? 0
             
+            print("set constant \(minimumThumbSpacing)")
             trailingConstraint.constant = -minimumThumbSpacing
             leadingConstraint.constant = minimumThumbSpacing
             topConstraint.constant = minimumThumbSpacing
             bottomConstraint.constant = -minimumThumbSpacing
             
+//            leadingConstraint.isActive = false
+//            leadingConstraint = switchThumb.leadingAnchor.constraint(equalTo: leadingAnchor, constant: minimumThumbSpacing)
+//            leadingConstraint.isActive = !isOn
+//            
+//            trailingConstraint.isActive = false
+//            trailingConstraint = switchThumb.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -minimumThumbSpacing)
+//            trailingConstraint.isActive = isOn
+//            
+//            topConstraint.isActive = false
+//            topConstraint = switchThumb.topAnchor.constraint(equalTo: topAnchor, constant: minimumThumbSpacing)
+//            topConstraint.isActive = true
+//            
+//            bottomConstraint.isActive = false
+//            bottomConstraint = switchThumb.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -minimumThumbSpacing)
+//            bottomConstraint.isActive = true
+            
+            setNeedsLayout()
+            updateConstraintsIfNeeded()
             layoutIfNeeded()
         }
     }
@@ -174,6 +192,16 @@ open class SimpleSwitch: UIControl {
 //        } else {
 //            switchThumb.frame = thumbOffFrame
 //        }
+    }
+    
+    open override var isEnabled: Bool {
+        didSet {
+            if isEnabled {
+                backgroundView.alpha = 1
+            } else {
+                backgroundView.alpha = 0.5
+            }
+        }
     }
     
     open override var intrinsicContentSize: CGSize {
@@ -305,7 +333,9 @@ open class SimpleSwitch: UIControl {
 //            self.switchThumb.frame = frame
             
             self.updateBackgroundColor()
-         
+            
+            self.setNeedsLayout()
+            self.updateConstraintsIfNeeded()
             self.layoutIfNeeded()
         }
         
@@ -334,6 +364,8 @@ open class SimpleSwitch: UIControl {
             
             self.updateBackgroundColor()
             
+            self.setNeedsLayout()
+            self.updateConstraintsIfNeeded()
             self.layoutIfNeeded()
         }
         
@@ -352,13 +384,14 @@ open class SimpleSwitch: UIControl {
     private var thumbRect: CGRect {
         let smallestSide = min(bounds.size.height, bounds.size.width)
         let thumbOuterRect = CGRect(x: 0, y: 0, width: smallestSide, height: smallestSide)
-        let thumbRect = UIEdgeInsetsInsetRect(thumbOuterRect, UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
+        let space = minimumThumbSpacing ?? 0
+        let thumbRect = UIEdgeInsetsInsetRect(thumbOuterRect, UIEdgeInsets(top: space, left: space, bottom: space, right: space))
         
         return thumbRect
     }
     
     private var thumbOffFrame: CGRect {
-        let x = (self.minimumThumbSpacing ?? 0)
+        let x = minimumThumbSpacing
         var frame = thumbRect
         frame.origin.y = (bounds.size.height - frame.size.height) / 2
         frame.origin.x = x
@@ -368,7 +401,7 @@ open class SimpleSwitch: UIControl {
     
     private var thumbOnFrame: CGRect {
         var frame = thumbRect
-        let x = (bounds.size.width - frame.size.width) - (minimumThumbSpacing ?? 0)
+        let x = (bounds.size.width - frame.size.width) - minimumThumbSpacing
         frame.origin.y = (bounds.size.height - frame.size.height) / 2
         frame.origin.x = x
         

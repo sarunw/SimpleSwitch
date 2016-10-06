@@ -22,6 +22,12 @@
                                     <constraint firstAttribute="height" constant="44" id="AZ1-xP-WfG"/>
                                     <constraint firstAttribute="width" constant="86" id="FXn-XU-q6H"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="offTintColor">
+                                        <color key="value" red="0.85933534263959388" green="0.85933534263959388" blue="0.85933534263959388" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOn" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RpX-gG-65k" customClass="SimpleSwitch" customModule="SimpleSwitch"/>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNb-qY-NKT" customClass="SimpleSwitch" customModule="SimpleSwitch">
@@ -29,15 +35,35 @@
                                     <constraint firstAttribute="width" constant="101" id="Op9-5k-qgH"/>
                                     <constraint firstAttribute="height" constant="85" id="hWS-Pc-T0k"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="onTintColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="thumbTintColor">
+                                        <color key="value" red="0.93333333330000001" green="0.2274509804" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumThumbSpacing">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DoV-Z2-M0I">
+                                <frame key="frameInset" minX="142" minY="617" width="97" height="30"/>
+                                <state key="normal" title="Toggle Enable"/>
+                                <connections>
+                                    <action selector="didTapToggleEnable:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Xqb-bS-bl1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tyK-bx-SRz" firstAttribute="top" secondItem="RpX-gG-65k" secondAttribute="bottom" constant="53.5" id="5lE-o8-hdR"/>
                             <constraint firstItem="RpX-gG-65k" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="EJw-lx-vVX"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="DoV-Z2-M0I" secondAttribute="bottom" constant="20" id="Ijo-Pf-d8U"/>
                             <constraint firstItem="tyK-bx-SRz" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="bQp-x8-fPM"/>
                             <constraint firstItem="dNb-qY-NKT" firstAttribute="top" secondItem="tyK-bx-SRz" secondAttribute="bottom" constant="42.5" id="hEy-1n-7iy"/>
                             <constraint firstItem="tyK-bx-SRz" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="ncK-YQ-3GB"/>
+                            <constraint firstItem="DoV-Z2-M0I" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="q2P-Lh-epu"/>
                             <constraint firstItem="dNb-qY-NKT" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="x07-60-9ER"/>
                         </constraints>
                     </view>
