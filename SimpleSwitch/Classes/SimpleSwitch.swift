@@ -30,6 +30,7 @@ open class SimpleSwitch: UIControl {
     @IBInspectable open var isOn: Bool {
         set {
             _isOn = newValue
+            sendActions(for: .valueChanged)
             
             if newValue == true {
                 changeToOn(animated: false)
@@ -116,7 +117,7 @@ open class SimpleSwitch: UIControl {
     
     public func setOn(_ on: Bool, animated: Bool) {
         _isOn = on
-        
+        sendActions(for: .valueChanged)
         if on {
             changeToOn(animated: animated)
         } else {
@@ -125,6 +126,9 @@ open class SimpleSwitch: UIControl {
     }
     
     private func commonInit() {
+        
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(self.switchAreaTapped(sender:)))
+        addGestureRecognizer(singleTap)
         
         backgroundView = UIView(frame: bounds)
         backgroundView.translatesAutoresizingMaskIntoConstraints = true
@@ -298,6 +302,11 @@ open class SimpleSwitch: UIControl {
                 self.layoutIfNeeded()
             })
         }
+    }
+    
+    func switchAreaTapped(sender: AnyObject) {
+        // Prevent passing touch to underlying view
+        // TODO: find a better way to do this
     }
     
     func switchThumbTapped(sender: AnyObject) {

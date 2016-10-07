@@ -21,6 +21,13 @@ class ViewController: UIViewController {
         frame.origin.y -= 160
         ss.frame = frame
         view.addSubview(ss)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.didTap(sender:)))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func didTap(sender: AnyObject) {
+        print("tap")
     }
 
     override func didReceiveMemoryWarning() {
