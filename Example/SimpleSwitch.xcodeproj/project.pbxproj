@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		755261D8C2700D40140D70FC /* Pods_SimpleSwitch_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F59CFAE9522CCEAD0BBA4F /* Pods_SimpleSwitch_Tests.framework */; };
+		A0E0980A1DD03D5F009286E8 /* LogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E098091DD03D5F009286E8 /* LogicTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		71F59CFAE9522CCEAD0BBA4F /* Pods_SimpleSwitch_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleSwitch_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A68A0988C89516F5B42B72 /* Pods-SimpleSwitch_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleSwitch_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleSwitch_Example/Pods-SimpleSwitch_Example.release.xcconfig"; sourceTree = "<group>"; };
 		9A481D7A9CA5DCD2E8E2660D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A0E098091DD03D5F009286E8 /* LogicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicTests.swift; sourceTree = "<group>"; };
 		DFE7172B7C2D3BBB700F248B /* SimpleSwitch.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SimpleSwitch.podspec; path = ../SimpleSwitch.podspec; sourceTree = "<group>"; };
 		ECF96F6FEAF50CC30B9D9890 /* Pods-SimpleSwitch_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleSwitch_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleSwitch_Example/Pods-SimpleSwitch_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +119,7 @@
 			children = (
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				A0E098091DD03D5F009286E8 /* LogicTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E0980A1DD03D5F009286E8 /* LogicTests.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

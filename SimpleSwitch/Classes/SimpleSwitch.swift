@@ -30,7 +30,6 @@ open class SimpleSwitch: UIControl {
     @IBInspectable open var isOn: Bool {
         set {
             _isOn = newValue
-            sendActions(for: .valueChanged)
             
             if newValue == true {
                 changeToOn(animated: false)
@@ -117,7 +116,7 @@ open class SimpleSwitch: UIControl {
     
     public func setOn(_ on: Bool, animated: Bool) {
         _isOn = on
-        sendActions(for: .valueChanged)
+        
         if on {
             changeToOn(animated: animated)
         } else {
@@ -328,6 +327,8 @@ open class SimpleSwitch: UIControl {
         } else {
             setOn(true, animated: true)
         }
+        
+        sendActions(for: .valueChanged)
     }
     
     private func changeToOff(animated: Bool) {

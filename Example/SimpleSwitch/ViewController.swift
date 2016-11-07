@@ -22,8 +22,14 @@ class ViewController: UIViewController {
         ss.frame = frame
         view.addSubview(ss)
         
+        ss.addTarget(self, action: #selector(valueChanged(sender:)), for: .valueChanged)
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.didTap(sender:)))
         view.addGestureRecognizer(tap)
+    }
+    
+    func valueChanged(sender: AnyObject) {
+        print("switch")
     }
     
     func didTap(sender: AnyObject) {
