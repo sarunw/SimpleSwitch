@@ -212,6 +212,7 @@ open class SimpleSwitch: UIControl {
     }
     
     // MARK: - Actions
+    private var originalValue: Bool?
     private var touchBegin: CGPoint?
     private var alreadyToggle: Bool = false // boolean state that ui already toggle
     
@@ -222,6 +223,7 @@ open class SimpleSwitch: UIControl {
         
         let pos = touch.location(in: sender)
         touchBegin = touchBegin ?? pos
+        originalValue = originalValue ?? isOn
         guard let prevPos = touchBegin else {
             return
         }
@@ -318,11 +320,14 @@ open class SimpleSwitch: UIControl {
         if alreadyToggle {
             alreadyToggle = false
             
-            sendActions(for: .valueChanged)
-            
+            if originalValue != isOn {
+                sendActions(for: .valueChanged)
+            }
+            originalValue = nil
             return
         }
         
+        originalValue = nil
         alreadyToggle = false
         
         if isOn == true {
