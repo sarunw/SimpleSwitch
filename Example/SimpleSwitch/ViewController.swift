@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
-    func valueChanged(sender: AnyObject) {
+    @IBAction func valueChanged(sender: AnyObject) {
         print("switch")
     }
     

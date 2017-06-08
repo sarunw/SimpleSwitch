@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,6 +21,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyK-bx-SRz" customClass="SimpleSwitch" customModule="SimpleSwitch">
+                                <rect key="frame" x="144.5" y="311.5" width="86" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="AZ1-xP-WfG"/>
                                     <constraint firstAttribute="width" constant="86" id="FXn-XU-q6H"/>
@@ -28,9 +32,18 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isOn" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="valueChangedWithSender:" destination="vXZ-lx-hvc" eventType="valueChanged" id="EQq-PJ-Obg"/>
+                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RpX-gG-65k" customClass="SimpleSwitch" customModule="SimpleSwitch"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RpX-gG-65k" customClass="SimpleSwitch" customModule="SimpleSwitch">
+                                <rect key="frame" x="162" y="227" width="51" height="31"/>
+                                <connections>
+                                    <action selector="valueChangedWithSender:" destination="vXZ-lx-hvc" eventType="valueChanged" id="1Nn-hj-FKT"/>
+                                </connections>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNb-qY-NKT" customClass="SimpleSwitch" customModule="SimpleSwitch">
+                                <rect key="frame" x="137" y="398" width="101" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="101" id="Op9-5k-qgH"/>
                                     <constraint firstAttribute="height" constant="85" id="hWS-Pc-T0k"/>
@@ -46,9 +59,12 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="valueChangedWithSender:" destination="vXZ-lx-hvc" eventType="valueChanged" id="sO0-lI-OH4"/>
+                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DoV-Z2-M0I">
-                                <frame key="frameInset" minX="142" minY="617" width="97" height="30"/>
+                                <rect key="frame" x="142" y="617" width="97" height="30"/>
                                 <state key="normal" title="Toggle Enable"/>
                                 <connections>
                                     <action selector="didTapToggleEnable:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Xqb-bS-bl1"/>

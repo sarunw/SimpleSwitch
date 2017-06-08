@@ -213,7 +213,7 @@ open class SimpleSwitch: UIControl {
     
     // MARK: - Actions
     private var touchBegin: CGPoint?
-    private var alreadyToggle: Bool = false
+    private var alreadyToggle: Bool = false // boolean state that ui already toggle
     
     func onTouchDragInside(sender: UIButton, withEvent event: UIEvent) {
         guard let touch = event.touches(for: sender)?.first else {
@@ -317,6 +317,9 @@ open class SimpleSwitch: UIControl {
         
         if alreadyToggle {
             alreadyToggle = false
+            
+            sendActions(for: .valueChanged)
+            
             return
         }
         
