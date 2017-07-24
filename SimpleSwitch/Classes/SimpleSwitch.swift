@@ -125,8 +125,8 @@ open class SimpleSwitch: UIControl {
     }
     
     private func commonInit() {
-        
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(self.switchAreaTapped(sender:)))
+        singleTap.cancelsTouchesInView = false
         addGestureRecognizer(singleTap)
         
         backgroundView = UIView(frame: bounds)
