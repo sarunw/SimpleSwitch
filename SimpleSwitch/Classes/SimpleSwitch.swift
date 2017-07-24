@@ -341,9 +341,9 @@ open class SimpleSwitch: UIControl {
     
     private func changeToOff(animated: Bool) {
         let animations = {
-//            self.leadingConstraint.constant = (self.minimumThumbSpacing ?? 0)
-            self.leadingConstraint.isActive = true
+//            self.leadingConstraint.constant = (self.minimumThumbSpacing ?? 0)            
             self.trailingConstraint.isActive = false
+            self.leadingConstraint.isActive = true
             
 //            let x = (self.minimumThumbSpacing ?? 0)
 //            var frame = self.switchThumb.frame
