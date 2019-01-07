@@ -216,7 +216,7 @@ open class SimpleSwitch: UIControl {
     private var touchBegin: CGPoint?
     private var alreadyToggle: Bool = false // boolean state that ui already toggle
     
-    func onTouchDragInside(sender: UIButton, withEvent event: UIEvent) {
+    @objc func onTouchDragInside(sender: UIButton, withEvent event: UIEvent) {
         guard let touch = event.touches(for: sender)?.first else {
             return
         }
@@ -249,15 +249,15 @@ open class SimpleSwitch: UIControl {
         }
     }
     
-    func onTouchUpOutsideOrCanceled(sender: AnyObject) {
+    @objc func onTouchUpOutsideOrCanceled(sender: AnyObject) {
         toggleThumbState()
     }
     
-    func onShrink(sender: AnyObject) {
+    @objc func onShrink(sender: AnyObject) {
         shrinkSwitchThumb()
     }
     
-    func onTouchDown(sender: AnyObject) {
+    @objc func onTouchDown(sender: AnyObject) {
         expandSwitchThumb()
     }
     
@@ -305,12 +305,12 @@ open class SimpleSwitch: UIControl {
         }
     }
     
-    func switchAreaTapped(sender: AnyObject) {
+    @objc func switchAreaTapped(sender: AnyObject) {
         // Prevent passing touch to underlying view
         // TODO: find a better way to do this
     }
     
-    func switchThumbTapped(sender: AnyObject) {
+    @objc func switchThumbTapped(sender: AnyObject) {
         toggleThumbState()
     }
     
@@ -402,8 +402,8 @@ open class SimpleSwitch: UIControl {
     private var thumbRect: CGRect {
         let smallestSide = min(bounds.size.height, bounds.size.width)
         let thumbOuterRect = CGRect(x: 0, y: 0, width: smallestSide, height: smallestSide)
-        let space = minimumThumbSpacing ?? 0
-        let thumbRect = UIEdgeInsetsInsetRect(thumbOuterRect, UIEdgeInsets(top: space, left: space, bottom: space, right: space))
+        let space = minimumThumbSpacing        
+        let thumbRect = thumbOuterRect.inset(by: UIEdgeInsets(top: space, left: space, bottom: space, right: space))
         
         return thumbRect
     }

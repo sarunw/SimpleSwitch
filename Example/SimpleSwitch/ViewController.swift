@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         print("switch")
     }
     
-    func didTap(sender: AnyObject) {
+    @objc func didTap(sender: AnyObject) {
         print("tap")
     }
 
